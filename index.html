@@ -1,44 +1,1501 @@
 <!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAKUO AI | Architecture Visual Archive</title>
-<meta name="description" content="KAKUO AIは、建築・インテリア・ランドスケープ・再開発・宿泊施設の初期提案を、AIビジュアルと設計知見で高速化する建築AIデザインスタジオです。">
-<meta property="og:title" content="KAKUO AI | Architecture Visual Archive">
-<meta property="og:description" content="建築家の感性を、AIで拡張する。KAKUO AIの建築AIビジュアルアーカイブ。">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<style>
-:root{--black:#070807;--panel:#101211;--panel2:#171a18;--line:rgba(244,246,242,.13);--text:#f4f6f2;--muted:rgba(244,246,242,.62);--soft:rgba(244,246,242,.82);--green:#a8c5b3;--gold:#b8a06a;--r:18px}*{box-sizing:border-box}html,body{width:100%;min-height:100%;margin:0;padding:0;overflow-x:hidden;overflow-y:auto;scroll-behavior:smooth}body{background:radial-gradient(circle at 80% -20%,rgba(168,197,179,.14),transparent 34rem),radial-gradient(circle at 10% 10%,rgba(205,215,210,.08),transparent 24rem),var(--black);color:var(--text);font-family:Inter,"Helvetica Neue","Noto Sans JP",Arial,sans-serif;letter-spacing:0;-webkit-overflow-scrolling:touch;touch-action:pan-y}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover;max-width:100%}p,h1,h2,h3{margin:0}main,.wrap{width:100%;min-height:100svh;height:auto;overflow:visible;position:relative}section{position:relative;width:100%;scroll-margin-top:92px}.header{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;min-height:72px;padding:0 clamp(18px,4vw,58px);background:rgba(7,8,7,.76);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.brand{display:grid;font-size:14px;font-weight:760}.brand span{color:var(--muted);font-size:10px;font-weight:520}.nav{justify-self:end;display:flex;align-items:center;gap:clamp(14px,2.1vw,28px);color:var(--muted);font-size:13px}.nav a:hover{color:var(--text)}.menu-toggle,.menu-btn{display:none}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:1px solid rgba(244,246,242,.28);border-radius:999px;color:var(--text);font-size:13px;font-weight:700;white-space:nowrap;transition:transform .18s ease,border-color .18s ease,background .18s ease}.btn:hover{transform:translateY(-1px);border-color:rgba(244,246,242,.54)}.primary{border-color:var(--text);background:var(--text);color:var(--black)}.ghost{background:rgba(244,246,242,.05)}.hero{min-height:calc(100svh - 72px);display:grid;align-items:center;padding:clamp(56px,7vw,96px) clamp(18px,4.5vw,68px)}.hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:clamp(32px,5vw,74px);align-items:center}.kicker{color:var(--green);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}h1{margin-top:20px;max-width:820px;font-size:clamp(44px,7vw,106px);font-weight:640;line-height:.96;letter-spacing:-.04em}.lead{margin-top:24px;max-width:690px;color:var(--soft);font-size:clamp(15px,1.55vw,19px);line-height:1.9}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.hero-board{display:grid;grid-template-columns:1.08fr .86fr;gap:12px;min-width:0}.hero-stack{display:grid;gap:12px}.card,.work,.mini{position:relative;display:block;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);isolation:isolate}.hero-card{min-height:440px}.hero-stack .hero-card{min-height:214px}.shade{position:absolute;inset:auto 0 0;z-index:1;height:50%;background:linear-gradient(0deg,rgba(7,8,7,.8),transparent);pointer-events:none}.card img,.work img,.mini img{transition:transform .42s ease,filter .42s ease}.card:hover img,.work:hover img,.mini:hover img{transform:scale(1.03);filter:saturate(1.08)}.meta{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;display:grid;gap:4px}.meta small,.eyebrow{color:rgba(244,246,242,.68);font-size:11px;font-weight:700;text-transform:uppercase}.meta strong{font-size:15px;font-weight:700}.section{padding:clamp(72px,9vw,132px) clamp(18px,4.5vw,68px)}.section.compact{padding-top:clamp(48px,6vw,88px)}.head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(280px,.68fr);gap:28px;align-items:end;margin-bottom:clamp(28px,5vw,54px)}.title{margin-top:12px;font-size:clamp(36px,5.5vw,82px);line-height:.96;font-weight:620;letter-spacing:-.04em}.section-lead{color:var(--muted);font-size:15px;line-height:1.9}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.pill{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(244,246,242,.035);font-size:12px}.archive{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:dense;gap:16px}.archive .card{min-height:320px}.card.featured{grid-column:span 2;grid-row:span 2;min-height:560px}.card.tall{grid-row:span 2;min-height:520px}.card.wide{grid-column:span 2}.info{position:absolute;z-index:2;inset:auto 14px 14px;display:grid;gap:8px;padding:14px;border:1px solid rgba(244,246,242,.12);border-radius:14px;background:rgba(7,8,7,.58);backdrop-filter:blur(10px)}.info b{font-size:17px}.info p{color:rgba(244,246,242,.74);font-size:12px;line-height:1.55}.info span{color:var(--green);font-size:11px;font-weight:700;text-transform:uppercase}.grid3,.grid4{display:grid;gap:14px}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.service,.process,.usecase,.about-card{border:1px solid var(--line);border-radius:var(--r);background:rgba(244,246,242,.045)}.service,.process{min-height:190px;padding:22px}.service h3,.process h3{margin-top:36px;font-size:19px}.service p,.process p,.about-card p{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.8}.num{color:var(--green);font-size:12px;font-weight:700}.usecase{min-height:96px;display:flex;align-items:end;padding:18px;color:var(--soft);font-size:15px}.bento{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-auto-rows:220px;gap:16px}.work.large{grid-row:span 2}.work.wide{grid-column:span 2}.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:clamp(28px,5vw,72px)}.about-card{padding:clamp(24px,4vw,42px)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}.stat strong{display:block;font-size:28px;font-weight:620}.stat span{color:var(--muted);font-size:11px}.contact-panel{position:relative;overflow:hidden;min-height:540px;display:grid;place-items:center;padding:clamp(42px,7vw,82px) 20px;border:1px solid var(--line);border-radius:28px;text-align:center;background:var(--panel)}.contact-panel img{position:absolute;inset:0;opacity:.38;pointer-events:none}.contact-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,7,.82),rgba(7,8,7,.32));pointer-events:none}.contact-copy{position:relative;z-index:1;max-width:840px}.contact-copy h2{margin-top:14px;font-size:clamp(36px,6vw,84px);line-height:.98;font-weight:620;letter-spacing:-.04em}.contact-copy p{margin:22px auto 0;max-width:680px;color:var(--soft);font-size:15px;line-height:1.9}.footer{display:flex;justify-content:space-between;gap:20px;padding:30px clamp(18px,4.5vw,68px);border-top:1px solid var(--line);color:var(--muted);font-size:12px}@media(prefers-reduced-motion:no-preference){.reveal{animation:up .6s ease both;animation-timeline:view();animation-range:entry 0 cover 24%}.hero-copy{animation:up .52s ease both}.hero-board{animation:up .72s ease both}}@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@media(max-width:1180px){.archive,.grid4{grid-template-columns:repeat(3,minmax(0,1fr))}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:860px){.header{grid-template-columns:auto auto;min-height:64px}.menu-btn{display:grid;justify-self:end;width:42px;height:42px;place-items:center;border:1px solid var(--line);border-radius:999px}.menu-btn:before{content:"";width:18px;height:10px;border-top:1px solid currentColor;border-bottom:1px solid currentColor}.nav{position:absolute;top:64px;left:14px;right:14px;display:none;grid-column:1/-1;grid-template-columns:1fr;gap:0;padding:10px;border:1px solid var(--line);border-radius:18px;background:rgba(16,18,17,.96);box-shadow:0 24px 60px rgba(0,0,0,.35)}.nav a{min-height:44px;display:flex;align-items:center;padding:0 12px}.nav .btn{margin-top:8px;justify-content:center}.menu-toggle:checked~.nav{display:grid}.hero{min-height:auto}.hero-grid,.head,.about{grid-template-columns:1fr}.hero-board{grid-template-columns:1fr}.hero-card,.hero-stack .hero-card{min-height:320px}.archive,.grid3,.grid4,.bento,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.card.featured,.card.wide,.work.wide{grid-column:span 1}.card.featured,.card.tall{grid-row:span 1;min-height:360px}}@media(max-width:520px){.hero,.section{padding-left:14px;padding-right:14px}h1{font-size:45px}.archive,.grid3,.grid4,.bento,.stats{grid-template-columns:1fr}.archive .card,.card.featured,.card.tall,.hero-card{min-height:390px}.service,.process{min-height:164px}.footer{display:grid}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<header class="header"><a class="brand" href="#top">KAKUO AI<span>Design Archive</span></a><input class="menu-toggle" id="menu" type="checkbox"><label class="menu-btn" for="menu" aria-label="Menu"></label><nav class="nav"><a href="#archive" onclick="document.getElementById('menu').checked=false">Archive</a><a href="#service" onclick="document.getElementById('menu').checked=false">Service</a><a href="#process" onclick="document.getElementById('menu').checked=false">Process</a><a href="#works" onclick="document.getElementById('menu').checked=false">Works</a><a href="#about" onclick="document.getElementById('menu').checked=false">About</a><a class="btn primary" href="./contact/">Contact</a></nav></header>
-<main id="top">
-<section class="hero"><div class="hero-grid"><div class="hero-copy"><p class="kicker">KAKUO AI INC.</p><h1>Architecture visuals, curated like an archive.</h1><p class="lead">建築・インテリア・ランドスケープ・不動産開発の構想を、AIと建築設計の知見で高速に可視化するKAKUO AIのビジュアルアーカイブ。</p><div class="actions"><a class="btn primary" href="#archive">Archiveを見る</a><a class="btn ghost" href="./contact/">相談する</a></div></div><div class="hero-board"><a class="card hero-card" href="https://kakuo-ai.com/" target="_blank" rel="noopener"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Forest Stone Villa Night" fetchpriority="high"><span class="shade"></span><span class="meta"><small>Featured</small><strong>Forest Stone Villa</strong></span></a><div class="hero-stack"><a class="card hero-card" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_f9ab4f8b-026b-4611-84ba-f9ce44bcabb1.jpg" alt="Urban Redevelopment" fetchpriority="high"><span class="shade"></span><span class="meta"><small>Urban</small><strong>Mixed-use Redevelopment</strong></span></a><a class="card hero-card" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_3fbac021-448d-4277-aadf-59bd185bba15.jpg" alt="Urban Green Plaza" loading="lazy"><span class="shade"></span><span class="meta"><small>Landscape</small><strong>Urban Green Plaza</strong></span></a></div></div></div></section>
-<section class="section" id="archive"><div class="head"><div><p class="kicker">AI Visual Archive</p><h2 class="title">Design references for decision making.</h2></div><p class="section-lead">大きな画像、少ない言葉、明確な導線で、構想段階のプロジェクトをすばやく共有できるギャラリーです。</p></div><div class="toolbar"><span class="pill">Architecture</span><span class="pill">Interior</span><span class="pill">Urban</span><span class="pill">Product</span><span class="pill">Wellness</span></div><div class="archive">
-<a class="card featured reveal" href="https://kakuo-ai.com/" target="_blank" rel="noopener"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Forest Stone Villa Night"><span class="shade"></span><span class="info"><span>Villa / Architecture</span><b>Forest Stone Villa Night</b><p>森・石・木・光が一体となるラグジュアリーヴィラ構想。</p></span></a>
-<a class="card reveal" href="https://kakuo-ai.com/" target="_blank" rel="noopener"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_6ca90a62-ef10-4a59-8ef9-21676af94872.jpg" alt="Forest Stone Villa Day"><span class="shade"></span><span class="info"><span>Villa / Architecture</span><b>Forest Stone Villa Day</b><p>自然環境と建築が溶け合う昼景外観。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_f9ab4f8b-026b-4611-84ba-f9ce44bcabb1.jpg" alt="Urban Mixed-use"><span class="shade"></span><span class="info"><span>Urban / Real Estate</span><b>Urban Mixed-use</b><p>大規模複合施設の未来像を可視化。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_01947fdd-1cfa-4aec-a8d1-b7f132c1b623.jpg" alt="Forest Stone Living"><span class="shade"></span><span class="info"><span>Interior / Villa</span><b>Forest Stone Living</b><p>石と森を取り込むラグジュアリーリビング。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_b45d6969-3153-4636-b70a-c36244590f6a.jpg" alt="Forest View Bedroom"><span class="shade"></span><span class="info"><span>Hotel / Villa</span><b>Forest View Bedroom</b><p>森を望む滞在体験を描くベッドルーム。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x315_webp_e866351f-00a5-40a1-9322-a42f32984694.jpg" alt="Wellness Bathroom"><span class="shade"></span><span class="info"><span>Hotel / Wellness</span><b>Wellness Bathroom</b><p>森を望む浴室・サウナ空間。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_4ed0445d-cb10-42fe-bce2-7d30659dc340.jpg" alt="Hospital Facade"><span class="shade"></span><span class="info"><span>Healthcare</span><b>Hospital Facade</b><p>医療施設ファサードを現代的に再構成。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_fd6f77c0-232f-457a-9518-cdf73b540e19.jpg" alt="Bamboo Sauna"><span class="shade"></span><span class="info"><span>Wellness</span><b>Bamboo Sauna Pavilion</b><p>竹林に佇む小規模サウナパビリオン。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Bakery Interior"><span class="shade"></span><span class="info"><span>Retail</span><b>Bakery Interior</b><p>商品・什器・素材感まで一体で見せる店舗。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7c37e310-52a1-4474-b2b1-4e96c3963ab3.jpg" alt="Urban Night"><span class="shade"></span><span class="info"><span>Urban</span><b>Urban Night Development</b><p>夜のにぎわいと緑化を描く再開発提案。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture"><span class="shade"></span><span class="info"><span>Product</span><b>Furniture Design</b><p>家具を空間の中で魅力的に見せる提案。</p></span></a>
-<a class="card reveal" href="#works"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7ee3824b-ecef-4858-94f2-d165b44762ac.jpg" alt="New Product"><span class="shade"></span><span class="info"><span>Product / Retail</span><b>New Product Visual</b><p>新商品を空間体験として可視化。</p></span></a>
-</div><div class="actions"><a class="btn primary" href="./contact/">相談する</a><a class="btn ghost" href="#works">Selected Worksを見る</a></div></section>
-<section class="section" id="service"><div class="head"><div><p class="kicker">Service</p><h2 class="title">From concept to visual proof.</h2></div><p class="section-lead">構想段階の建築・インテリア・不動産開発・メーカー提案を、意思決定できるビジュアルへ整理します。</p></div><div class="grid3"><div class="service reveal"><span class="num">01</span><h3>AI Design Visualization</h3><p>建築・インテリア・ランドスケープの構想を高品質なAIビジュアルとして可視化。</p></div><div class="service reveal"><span class="num">02</span><h3>Concept Design Support</h3><p>初期企画、素材感、世界観を複数案で検討。</p></div><div class="service reveal"><span class="num">03</span><h3>Real Estate Proposal</h3><p>不動産、再開発、商業施設、ホテル開発向けの提案ビジュアル制作。</p></div><div class="service reveal"><span class="num">04</span><h3>Manufacturer Visual Consulting</h3><p>建材、家具、浴槽、什器を空間利用シーンとして表現。</p></div><div class="service reveal"><span class="num">05</span><h3>AI Consulting / DX Support</h3><p>建築・建設・不動産業界向けの生成AI導入、研修、業務支援。</p></div><div class="service reveal"><span class="num">06</span><h3>Presentation Asset</h3><p>営業、打合せ、広報、SNSに使える画像群として整理。</p></div></div></section>
-<section class="section compact" id="process"><div class="head"><div><p class="kicker">Process</p><h2 class="title">Fast, curated, practical.</h2></div></div><div class="grid4"><div class="process"><span class="num">01</span><h3>Hearing</h3><p>条件、目的、ターゲット、参考イメージを整理。</p></div><div class="process"><span class="num">02</span><h3>AI Generation</h3><p>数十から数百の方向性を短時間で生成。</p></div><div class="process"><span class="num">03</span><h3>Architect Review</h3><p>建築家の視点で、実現性・美しさ・提案性を評価。</p></div><div class="process"><span class="num">04</span><h3>Delivery</h3><p>プレゼン・提案・社内検討に使える形で納品。</p></div></div></section>
-<section class="section" id="works"><div class="head"><div><p class="kicker">Selected Works</p><h2 class="title">Bento selection.</h2></div><p class="section-lead">代表的なプロジェクトを、建築・都市・インテリア・プロダクトの視点で再編集しました。</p></div><div class="bento"><a class="work large" href="https://kakuo-ai.com/" target="_blank" rel="noopener"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Forest Stone Villa"><span class="shade"></span><span class="meta"><small>Featured Project</small><strong>Forest Stone Villa</strong></span></a><a class="work wide" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_f9ab4f8b-026b-4611-84ba-f9ce44bcabb1.jpg" alt="Future City"><span class="shade"></span><span class="meta"><small>Urban Development</small><strong>Future City Masterplan</strong></span></a><a class="work" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Bistro"><span class="shade"></span><span class="meta"><small>Restaurant</small><strong>Tokyo Bistro Interior</strong></span></a><a class="work" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7682e518-9b75-4c42-8323-f9557bb88ec3.jpg" alt="Shrine"><span class="shade"></span><span class="meta"><small>Cultural</small><strong>Urban Shrine Kiosk</strong></span></a><a class="work" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-680x381_v-fs_webp_08d6a4c5-f6f0-4281-96cc-e6f8e0ffe1c0.jpg" alt="Dining"><span class="shade"></span><span class="meta"><small>Interior</small><strong>Forest Dining Kitchen</strong></span></a><a class="work" href="#archive"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture"><span class="shade"></span><span class="meta"><small>Product</small><strong>Furniture in Space</strong></span></a></div></section>
-<section class="section" id="about"><div class="about"><div><p class="kicker">About KAKUO AI</p><h2 class="title">Not just image generation.</h2></div><div class="about-card"><p>KAKUO AIは、カクオ・アーキテクト・オフィスの建築設計知見とAI生成技術を組み合わせ、建築・空間・事業構想の初期提案を高速化するAIデザインスタジオです。</p><p>単なる画像生成ではなく、設計意図、素材感、導線、体験価値、ブランド性を踏まえたビジュアル提案を行います。</p><div class="stats"><div class="stat"><strong>24</strong><span>Archive visuals</span></div><div class="stat"><strong>6</strong><span>Design domains</span></div><div class="stat"><strong>AI</strong><span>Design intelligence</span></div></div></div></div></section>
-<section class="section" id="contact"><div class="contact-panel"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_3fbac021-448d-4277-aadf-59bd185bba15.jpg" alt="Urban Green Plaza" loading="lazy"><div class="contact-copy"><p class="kicker">Contact</p><h2>AIで、建築提案の初速を変える。</h2><p>図面、敷地情報、参考画像、企画書のいずれかがあれば、初期提案の方向性をビジュアルで整理できます。</p><div class="actions" style="justify-content:center"><a class="btn primary" href="./contact/">相談する</a><a class="btn ghost" href="#service">サービスを見る</a><a class="btn ghost" href="mailto:info@kakuo-ai.com">メールで問い合わせる</a></div></div></div></section>
-</main><footer class="footer"><div>KAKUO AI Design Archive</div><div>Architecture / Interior / Urban / Product / AI Visual</div></footer></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KAKUO AI Design Archive｜建築AIビジュアルギャラリー</title>
+    <meta name="description" content="KAKUO AIは、建築・インテリア・ランドスケープ・再開発・宿泊施設の初期提案を、AIビジュアルと設計知見で高速化する建築AIデザインスタジオです。" />
+    <meta property="og:title" content="KAKUO AI | Architecture Visual Archive" />
+    <meta property="og:description" content="建築家の感性を、AIで拡張する。KAKUO AIの建築AIビジュアルアーカイブ。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --black: #070807;
+        --panel: #101211;
+        --panel-soft: #161918;
+        --line: rgba(236, 242, 238, 0.13);
+        --text: #f4f6f2;
+        --muted: rgba(244, 246, 242, 0.62);
+        --soft: rgba(244, 246, 242, 0.82);
+        --silver: #cdd7d2;
+        --green: #a8c5b3;
+        --ink: #171a18;
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        position: relative;
+        background:
+          radial-gradient(circle at 80% -20%, rgba(168, 197, 179, 0.14), transparent 34rem),
+          radial-gradient(circle at 10% 10%, rgba(205, 215, 210, 0.08), transparent 24rem),
+          var(--black);
+        color: var(--text);
+        font-family: Inter, "Helvetica Neue", "Noto Sans JP", Arial, sans-serif;
+        letter-spacing: 0;
+        overscroll-behavior-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+      }
+
+      img,
+      video,
+      canvas,
+      svg {
+        max-width: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a,
+      button,
+      input,
+      label,
+      summary {
+        pointer-events: auto;
+      }
+
+      p,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      main,
+      .site-wrapper {
+        width: 100%;
+        min-height: 100svh;
+        height: auto;
+        overflow: visible;
+        position: relative;
+      }
+
+      section {
+        width: 100%;
+        position: relative;
+        overflow: visible;
+        scroll-margin-top: 92px;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 24px;
+        min-height: 72px;
+        padding: 0 clamp(18px, 4vw, 58px);
+        background: rgba(7, 8, 7, 0.74);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: inline-grid;
+        gap: 1px;
+        font-size: 14px;
+        font-weight: 760;
+        letter-spacing: 0.01em;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 520;
+      }
+
+      .nav {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 2.1vw, 28px);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .menu-button {
+        display: none;
+        justify-self: end;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--text);
+      }
+
+      .menu-button::before {
+        content: "";
+        width: 18px;
+        height: 10px;
+        border-top: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 18px;
+        border: 1px solid rgba(244, 246, 242, 0.28);
+        border-radius: 999px;
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 690;
+        white-space: nowrap;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(244, 246, 242, 0.54);
+      }
+
+      .button.primary {
+        border-color: var(--text);
+        background: var(--text);
+        color: var(--black);
+      }
+
+      .button.ghost {
+        background: rgba(244, 246, 242, 0.05);
+      }
+
+      .hero-section {
+        min-height: calc(100svh - 72px);
+        height: auto;
+        display: grid;
+        align-items: center;
+        padding: clamp(56px, 7vw, 96px) clamp(18px, 4.5vw, 68px);
+      }
+
+      .hero-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+        gap: clamp(32px, 5vw, 74px);
+        align-items: center;
+      }
+
+      .kicker {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 680;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin-top: 20px;
+        max-width: 820px;
+        font-size: clamp(44px, 7vw, 106px);
+        font-weight: 640;
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-lead {
+        margin-top: 24px;
+        max-width: 690px;
+        color: var(--soft);
+        font-size: clamp(15px, 1.55vw, 19px);
+        line-height: 1.9;
+      }
+
+      .hero-actions,
+      .section-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .hero-board {
+        display: grid;
+        grid-template-columns: 1.08fr 0.86fr;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .hero-stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .hero-card,
+      .archive-card,
+      .work-card,
+      .mini-work {
+        position: relative;
+        overflow: hidden;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        isolation: isolate;
+      }
+
+      .hero-card {
+        min-height: 440px;
+      }
+
+      .hero-stack .hero-card {
+        min-height: 214px;
+      }
+
+      .card-shade,
+      .decorative-layer,
+      .image-layer,
+      .gradient-layer {
+        pointer-events: none;
+      }
+
+      .card-shade {
+        position: absolute;
+        inset: auto 0 0;
+        z-index: 1;
+        height: 48%;
+        background: linear-gradient(0deg, rgba(7, 8, 7, 0.78), transparent);
+      }
+
+      .hero-card img,
+      .archive-card img,
+      .work-card img,
+      .mini-work img {
+        transition: transform 420ms ease, filter 420ms ease;
+      }
+
+      .hero-card:hover img,
+      .archive-card:hover img,
+      .work-card:hover img,
+      .mini-work:hover img {
+        transform: scale(1.03);
+        filter: saturate(1.08);
+      }
+
+      .card-meta {
+        position: absolute;
+        z-index: 2;
+        left: 16px;
+        right: 16px;
+        bottom: 14px;
+        display: grid;
+        gap: 4px;
+      }
+
+      .card-meta small,
+      .card-eyebrow {
+        color: rgba(244, 246, 242, 0.68);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .card-meta strong {
+        font-size: 15px;
+        font-weight: 680;
+      }
+
+      .section {
+        padding: clamp(72px, 9vw, 132px) clamp(18px, 4.5vw, 68px);
+      }
+
+      .section.compact {
+        padding-top: clamp(48px, 6vw, 88px);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.68fr);
+        gap: 28px;
+        align-items: end;
+        margin-bottom: clamp(28px, 5vw, 54px);
+      }
+
+      .section-title {
+        margin-top: 12px;
+        font-size: clamp(36px, 5.5vw, 82px);
+        line-height: 0.96;
+        font-weight: 620;
+        letter-spacing: -0.04em;
+      }
+
+      .section-lead {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .archive-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        background: rgba(244, 246, 242, 0.035);
+        font-size: 12px;
+      }
+
+      .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-flow: dense;
+        gap: 16px;
+      }
+
+      .archive-card {
+        display: block;
+        min-height: 320px;
+        color: var(--text);
+      }
+
+      .archive-card.tall {
+        grid-row: span 2;
+        min-height: 520px;
+      }
+
+      .archive-card.wide {
+        grid-column: span 2;
+      }
+
+      .archive-card.featured {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 560px;
+      }
+
+      .archive-info {
+        position: absolute;
+        z-index: 2;
+        inset: auto 14px 14px;
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border: 1px solid rgba(244, 246, 242, 0.12);
+        border-radius: 14px;
+        background: rgba(7, 8, 7, 0.58);
+        backdrop-filter: blur(10px);
+      }
+
+      .archive-title {
+        font-size: 17px;
+        font-weight: 670;
+      }
+
+      .archive-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: rgba(244, 246, 242, 0.68);
+        font-size: 11px;
+      }
+
+      .archive-desc {
+        color: rgba(244, 246, 242, 0.74);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .service-grid,
+      .process-grid,
+      .usecase-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .usecase-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .service-card,
+      .process-card,
+      .usecase-card,
+      .about-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(244, 246, 242, 0.045);
+      }
+
+      .service-card,
+      .process-card {
+        min-height: 190px;
+        padding: 22px;
+      }
+
+      .service-card h3,
+      .process-card h3 {
+        margin-top: 36px;
+        font-size: 19px;
+        font-weight: 660;
+      }
+
+      .service-card p,
+      .process-card p,
+      .about-card p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .number {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 680;
+      }
+
+      .usecase-card {
+        min-height: 96px;
+        display: flex;
+        align-items: end;
+        padding: 18px;
+        color: var(--soft);
+        font-size: 15px;
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr 0.8fr;
+        grid-auto-rows: 220px;
+        gap: 16px;
+      }
+
+      .work-card {
+        display: block;
+      }
+
+      .work-card.large {
+        grid-row: span 2;
+      }
+
+      .work-card.wide {
+        grid-column: span 2;
+      }
+
+      .about-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: start;
+      }
+
+      .about-card {
+        padding: clamp(24px, 4vw, 42px);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .stat {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel-soft);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        font-weight: 620;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .contact-section {
+        padding-bottom: clamp(72px, 9vw, 128px);
+      }
+
+      .contact-panel {
+        position: relative;
+        overflow: hidden;
+        min-height: 540px;
+        display: grid;
+        place-items: center;
+        padding: clamp(42px, 7vw, 82px) 20px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        text-align: center;
+        background: var(--panel);
+      }
+
+      .contact-panel img {
+        position: absolute;
+        inset: 0;
+        opacity: 0.38;
+        pointer-events: none;
+      }
+
+      .contact-panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(7, 8, 7, 0.82), rgba(7, 8, 7, 0.32));
+        pointer-events: none;
+      }
+
+      .contact-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 840px;
+      }
+
+      .contact-copy h2 {
+        margin-top: 14px;
+        font-size: clamp(36px, 6vw, 84px);
+        line-height: 0.98;
+        font-weight: 620;
+        letter-spacing: -0.04em;
+      }
+
+      .contact-copy p {
+        margin: 22px auto 0;
+        max-width: 680px;
+        color: var(--soft);
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 30px clamp(18px, 4.5vw, 68px);
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .case-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        padding: 22px;
+        background: rgba(7, 8, 7, 0.82);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 180ms ease, visibility 180ms ease;
+      }
+
+      .case-modal:target {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .case-dialog {
+        width: min(1120px, 100%);
+        max-height: min(86svh, 820px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.75fr);
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+      }
+
+      .case-dialog img {
+        min-height: 520px;
+      }
+
+      .case-copy {
+        display: grid;
+        align-content: center;
+        gap: 16px;
+        padding: clamp(22px, 4vw, 44px);
+      }
+
+      .case-copy h3 {
+        font-size: clamp(26px, 3vw, 42px);
+        line-height: 1.05;
+        font-weight: 620;
+      }
+
+      .case-list {
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .case-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        min-width: 44px;
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(244, 246, 242, 0.08);
+      }
+
+      @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+          .reveal {
+            animation: reveal-card both ease-out;
+            animation-timeline: view();
+            animation-range: entry 0% cover 24%;
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-copy-block {
+          animation: fade-up 520ms ease both;
+        }
+
+        .hero-board {
+          animation: fade-up 720ms ease both;
+        }
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes reveal-card {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .archive-grid,
+        .usecase-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .service-grid,
+        .process-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .bento-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 860px) {
+        .site-header {
+          grid-template-columns: auto auto;
+          min-height: 64px;
+        }
+
+        .menu-button {
+          display: grid;
+        }
+
+        .nav {
+          position: absolute;
+          top: 64px;
+          left: 14px;
+          right: 14px;
+          display: none;
+          grid-column: 1 / -1;
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 10px;
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          background: rgba(16, 18, 17, 0.96);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .nav a {
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+        }
+
+        .nav .button {
+          margin-top: 8px;
+          justify-content: center;
+        }
+
+        .menu-toggle:checked ~ .nav {
+          display: grid;
+        }
+
+        .hero-section {
+          min-height: auto;
+        }
+
+        .hero-layout,
+        .section-head,
+        .about-layout,
+        .case-dialog {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-board {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-card,
+        .hero-stack .hero-card {
+          min-height: 320px;
+        }
+
+        .archive-grid,
+        .service-grid,
+        .process-grid,
+        .usecase-grid,
+        .bento-grid,
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .archive-card.featured,
+        .archive-card.wide,
+        .work-card.wide {
+          grid-column: span 1;
+        }
+
+        .archive-card.featured,
+        .archive-card.tall {
+          grid-row: span 1;
+          min-height: 360px;
+        }
+
+        .case-dialog img {
+          min-height: 320px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero-section,
+        .section {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        h1 {
+          font-size: 45px;
+        }
+
+        .archive-grid,
+        .service-grid,
+        .process-grid,
+        .usecase-grid,
+        .bento-grid,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .archive-card,
+        .archive-card.featured,
+        .archive-card.tall,
+        .hero-card {
+          min-height: 390px;
+        }
+
+        .service-card,
+        .process-card {
+          min-height: 164px;
+        }
+
+        .footer {
+          display: grid;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+
+      .archive-card,
+      .work-card,
+      .hero-card {
+        cursor: zoom-in;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(14px, 3vw, 34px);
+        background: rgba(3, 4, 4, 0.9);
+        backdrop-filter: blur(16px);
+      }
+
+      .lightbox.is-open {
+        display: flex;
+      }
+
+      body.lightbox-open {
+        overflow: hidden;
+      }
+
+      .lightbox-dialog {
+        width: min(1440px, 100%);
+        max-height: min(860px, calc(100svh - 28px));
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.45fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .lightbox-media {
+        min-height: 0;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+        background: #020302;
+      }
+
+      .lightbox-media img {
+        width: 100%;
+        height: 100%;
+        max-height: calc(100svh - 70px);
+        object-fit: contain;
+      }
+
+      .lightbox-copy {
+        display: grid;
+        align-content: end;
+        gap: 14px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(16, 18, 17, 0.86);
+      }
+
+      .lightbox-copy h3 {
+        font-size: clamp(26px, 3.2vw, 46px);
+        line-height: 1.03;
+      }
+
+      .lightbox-copy p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .lightbox-close,
+      .lightbox-prev,
+      .lightbox-next {
+        position: fixed;
+        z-index: 210;
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(244, 246, 242, 0.2);
+        border-radius: 999px;
+        background: rgba(16, 18, 17, 0.84);
+        color: var(--text);
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      .lightbox-close { top: 20px; right: 20px; }
+      .lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+      .lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+      .inline-contact {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .inline-contact-intro,
+      .inline-contact-form {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(16, 18, 17, 0.88);
+        padding: clamp(22px, 3vw, 34px);
+      }
+
+      .inline-contact-intro h3 {
+        margin-top: 12px;
+        font-size: clamp(30px, 4.5vw, 58px);
+        line-height: 1.03;
+      }
+
+      .inline-contact-intro p {
+        margin-top: 16px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .inline-contact-form {
+        display: grid;
+        gap: 13px;
+      }
+
+      .inline-contact-form label {
+        display: grid;
+        gap: 7px;
+        color: var(--soft);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .inline-contact-form input,
+      .inline-contact-form select,
+      .inline-contact-form textarea {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid rgba(244, 246, 242, 0.16);
+        border-radius: 12px;
+        background: rgba(7, 8, 7, 0.72);
+        color: var(--text);
+        padding: 10px 12px;
+        font: inherit;
+      }
+
+      .inline-contact-form textarea {
+        min-height: 132px;
+        resize: vertical;
+      }
+
+      .inline-contact-form .button {
+        width: 100%;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .form-note {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 860px) {
+        .lightbox-dialog,
+        .inline-contact {
+          grid-template-columns: 1fr;
+        }
+
+        .lightbox-dialog {
+          max-height: calc(100svh - 20px);
+          overflow: auto;
+        }
+
+        .lightbox-media img {
+          max-height: 58svh;
+        }
+
+        .lightbox-copy {
+          align-content: start;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+          top: auto;
+          bottom: 16px;
+          transform: none;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header">
+        <a class="brand" href="#top">KAKUO AI<span>Design Archive</span></a>
+        <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Menu" />
+        <label class="menu-button" for="menu-toggle" aria-label="Menu"></label>
+        <nav class="nav" aria-label="Primary">
+          <a href="#archive" onclick="document.getElementById('menu-toggle').checked=false">Archive</a>
+          <a href="#service" onclick="document.getElementById('menu-toggle').checked=false">Service</a>
+          <a href="#process" onclick="document.getElementById('menu-toggle').checked=false">Process</a>
+          <a href="#works" onclick="document.getElementById('menu-toggle').checked=false">Works</a>
+          <a href="#about" onclick="document.getElementById('menu-toggle').checked=false">About</a>
+          <a class="button primary" href="#contact-form" onclick="document.getElementById('menu-toggle').checked=false">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero-section" id="top">
+          <div class="hero-layout">
+            <div class="hero-copy-block">
+              <p class="kicker">Architecture AI Visual Archive</p>
+              <h1>建築家の感性を、AIで拡張する。</h1>
+              <p class="hero-lead">
+                KAKUO AIは、建築・インテリア・ランドスケープ・再開発・宿泊施設の初期提案を、AIビジュアルと設計知見で高速化する建築AIデザインスタジオです。
+              </p>
+              <div class="hero-actions">
+                <a class="button primary" href="#archive">View Archive</a>
+                <a class="button ghost" href="#contact-form">Contact / 相談する</a>
+              </div>
+            </div>
+            <div class="hero-board" aria-label="Featured visuals">
+              <a class="hero-card" href="https://kakuo-ai.com/" target="_blank" rel="noopener noreferrer">
+                <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Forest Stone Villa Night" width="1672" height="941" decoding="async" fetchpriority="high" />
+                <span class="card-shade"></span>
+                <span class="card-meta"><small>Villa / AI Concept / 2026</small><strong>Forest Stone Villa Night</strong></span>
+              </a>
+              <div class="hero-stack">
+                <a class="hero-card" href="#case-urban-mixed">
+                  <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_f9ab4f8b-026b-4611-84ba-f9ce44bcabb1.jpg" alt="Urban Mixed-use Redevelopment" width="2200" height="1232" decoding="async" fetchpriority="high" />
+                  <span class="card-shade"></span>
+                  <span class="card-meta"><small>Urban Development</small><strong>Mixed-use Redevelopment</strong></span>
+                </a>
+                <a class="hero-card" href="#case-green-plaza">
+                  <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_3fbac021-448d-4277-aadf-59bd185bba15.jpg" alt="Urban Green Plaza" width="1456" height="816" loading="lazy" decoding="async" />
+                  <span class="card-shade"></span>
+                  <span class="card-meta"><small>Landscape / Public Space</small><strong>Urban Green Plaza</strong></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section compact" id="archive">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Recent / Visual Archive</p>
+              <h2 class="section-title">Visual Archive</h2>
+            </div>
+            <p class="section-lead">
+              建築・空間・素材・光・ランドスケープまで、初期提案で判断できるビジュアルへ。KAKUO AIの制作アーカイブを、Project TypeとCategoryで横断できます。
+            </p>
+          </div>
+          <div class="archive-toolbar" aria-label="Categories">
+            <span class="pill">Luxury Residence</span>
+            <span class="pill">Hotel / Villa</span>
+            <span class="pill">Sauna / Wellness</span>
+            <span class="pill">Retail</span>
+            <span class="pill">Urban Development</span>
+            <span class="pill">Product Design</span>
+          </div>
+
+          <div class="archive-grid">
+            <a class="archive-card featured reveal" href="https://kakuo-ai.com/" target="_blank" rel="noopener noreferrer">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_6ca90a62-ef10-4a59-8ef9-21676af94872.jpg" alt="Forest Stone Villa Day" width="2200" height="1232" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Villa / Architecture</span><strong class="archive-title">Forest Stone Villa Day</strong><span class="archive-line">AI Visual / 2026 / KAKUO AI</span><span class="archive-desc">自然と建築が溶け合う昼景外観。</span></span>
+            </a>
+            <a class="archive-card tall reveal" href="#case-living">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_01947fdd-1cfa-4aec-a8d1-b7f132c1b623.jpg" alt="Forest Stone Living" width="1800" height="1008" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Interior / Villa</span><strong class="archive-title">Forest Stone Living</strong><span class="archive-line">AI Visual / 2026 / KAKUO AI</span><span class="archive-desc">石と森を取り込むラグジュアリーリビング。</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-bedroom">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_b45d6969-3153-4636-b70a-c36244590f6a.jpg" alt="Forest View Bedroom" width="1800" height="1008" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Hotel / Villa</span><strong class="archive-title">Forest View Bedroom</strong><span class="archive-line">Concept / 2026</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-bathroom">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x315_webp_e866351f-00a5-40a1-9322-a42f32984694.jpg" alt="Wellness Bathroom" width="1672" height="941" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Hotel / Wellness</span><strong class="archive-title">Wellness Bathroom</strong><span class="archive-line">AI Visual / 2026</span></span>
+            </a>
+            <a class="archive-card wide reveal" href="#case-hospital">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_4ed0445d-cb10-42fe-bce2-7d30659dc340.jpg" alt="Hospital Facade" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Architecture / Healthcare</span><strong class="archive-title">Hospital Facade</strong><span class="archive-line">Facade Concept / 2026</span><span class="archive-desc">医療施設のファサードを現代的に再構成。</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-sauna">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_fd6f77c0-232f-457a-9518-cdf73b540e19.jpg" alt="Bamboo Sauna Pavilion" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Architecture / Wellness</span><strong class="archive-title">Bamboo Sauna Pavilion</strong><span class="archive-line">AI Concept / 2026</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-bakery">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Bakery Interior" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Retail</span><strong class="archive-title">Bakery Interior</strong><span class="archive-line">Retail / 2026</span></span>
+            </a>
+            <a class="archive-card tall reveal" href="#case-night-urban">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7c37e310-52a1-4474-b2b1-4e96c3963ab3.jpg" alt="Urban Night Development" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Urban / Real Estate</span><strong class="archive-title">Urban Night Development</strong><span class="archive-line">Proposal Visual / 2026</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-furniture">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture Design" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Product Design</span><strong class="archive-title">Furniture Design</strong><span class="archive-line">Product / 2026</span></span>
+            </a>
+            <a class="archive-card wide reveal" href="#case-green-commercial">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Green Commercial Interior" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Retail / Landscape</span><strong class="archive-title">Green Commercial Interior</strong><span class="archive-line">Space Storytelling / 2026</span><span class="archive-desc">商業施設の中に緑と滞在を生む空間提案。</span></span>
+            </a>
+            <a class="archive-card reveal" href="#case-product">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7ee3824b-ecef-4858-94f2-d165b44762ac.jpg" alt="New Product Visual" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span>
+              <span class="archive-info"><span class="card-eyebrow">Product / Retail</span><strong class="archive-title">New Product Visual</strong><span class="archive-line">Campaign Visual / 2026</span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="service">
+          <div class="section-head">
+            <div>
+              <p class="kicker">What We Do</p>
+              <h2 class="section-title">Design Intelligence for early proposals.</h2>
+            </div>
+            <p class="section-lead">
+              長い説明より、意思決定できるイメージを。企画初期の曖昧な構想を、建築家の視点で整理し、短時間で比較可能なビジュアルへ変換します。
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal"><span class="number">01</span><h3>AI Architectural Visualization</h3><p>建築・インテリア・ランドスケープの構想を高品質なAIビジュアルとして可視化。</p></article>
+            <article class="service-card reveal"><span class="number">02</span><h3>Concept Design Support</h3><p>初期企画、素材感、光、世界観を複数案で検討できる形に整理。</p></article>
+            <article class="service-card reveal"><span class="number">03</span><h3>Design Direction</h3><p>建築的な判断を含めて、空間体験とブランド文脈を設計。</p></article>
+            <article class="service-card reveal"><span class="number">04</span><h3>Proposal Material Creation</h3><p>提案書、営業資料、社内検討、SNSに使いやすい見せ方へ展開。</p></article>
+            <article class="service-card reveal"><span class="number">05</span><h3>Brand / Space Storytelling</h3><p>素材、導線、滞在体験を含めたストーリーとして空間を表現。</p></article>
+            <article class="service-card reveal"><span class="number">06</span><h3>Real Estate / Hotel / Retail Planning</h3><p>不動産開発、ホテル、商業施設の初期提案をビジュアルで加速。</p></article>
+          </div>
+        </section>
+
+        <section class="section" id="process">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Process</p>
+              <h2 class="section-title">From input to proposal.</h2>
+            </div>
+            <p class="section-lead">資料が粗い段階でも、判断に必要な方向性を早く出すための4ステップです。</p>
+          </div>
+          <div class="process-grid">
+            <article class="process-card reveal"><span class="number">01 / Input</span><h3>Input</h3><p>参考画像・図面・事業構想・ブランド情報を整理。</p></article>
+            <article class="process-card reveal"><span class="number">02 / Direction</span><h3>Direction</h3><p>建築家の視点で方向性・体験価値・素材感を設計。</p></article>
+            <article class="process-card reveal"><span class="number">03 / Generation</span><h3>Generation</h3><p>AIで複数のビジュアル案を高速生成。</p></article>
+            <article class="process-card reveal"><span class="number">04 / Proposal</span><h3>Proposal</h3><p>比較しやすい形で提案書・SNS・営業資料に展開。</p></article>
+          </div>
+        </section>
+
+        <section class="section" id="usecases">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Use Cases</p>
+              <h2 class="section-title">Where visuals move the project.</h2>
+            </div>
+          </div>
+          <div class="usecase-grid">
+            <div class="usecase-card reveal">不動産開発の初期提案</div>
+            <div class="usecase-card reveal">ホテル・ヴィラのコンセプト検討</div>
+            <div class="usecase-card reveal">商業施設のデザイン検討</div>
+            <div class="usecase-card reveal">インテリア提案</div>
+            <div class="usecase-card reveal">サウナ・浴室・ウェルネス空間</div>
+            <div class="usecase-card reveal">ランドスケープ提案</div>
+            <div class="usecase-card reveal">建築プレゼン資料</div>
+            <div class="usecase-card reveal">SNS / 広報用ビジュアル</div>
+          </div>
+        </section>
+
+        <section class="section" id="works">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Selected Works</p>
+              <h2 class="section-title">Bento selection.</h2>
+            </div>
+            <p class="section-lead">代表的なプロジェクトを、建築・都市・インテリア・プロダクトの視点で再編集しました。</p>
+          </div>
+          <div class="bento-grid">
+            <a class="work-card large" href="https://kakuo-ai.com/" target="_blank" rel="noopener noreferrer">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Forest Stone Villa Night" width="1672" height="941" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Featured Project</small><strong>Forest Stone Villa</strong></span>
+            </a>
+            <a class="work-card wide" href="#case-aerial">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_6ca90a62-ef10-4a59-8ef9-21676af94872.jpg" alt="Future City Masterplan" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Urban Development</small><strong>Future City Masterplan</strong></span>
+            </a>
+            <a class="work-card" href="#case-bistro">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Tokyo Bistro Interior" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Restaurant</small><strong>Tokyo Bistro Interior</strong></span>
+            </a>
+            <a class="work-card" href="#case-shrine">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7682e518-9b75-4c42-8323-f9557bb88ec3.jpg" alt="Urban Shrine Kiosk" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Cultural Space</small><strong>Urban Shrine Kiosk</strong></span>
+            </a>
+            <a class="work-card" href="#case-dining">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-680x381_v-fs_webp_08d6a4c5-f6f0-4281-96cc-e6f8e0ffe1c0.jpg" alt="Forest Dining Kitchen" width="1800" height="1008" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Interior</small><strong>Forest Dining Kitchen</strong></span>
+            </a>
+            <a class="work-card" href="#case-side-table">
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture in Space" width="1456" height="816" loading="lazy" decoding="async" />
+              <span class="card-shade"></span><span class="card-meta"><small>Product</small><strong>Furniture in Space</strong></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="about-layout">
+            <div>
+              <p class="kicker">About KAKUO AI</p>
+              <h2 class="section-title">Not just image generation.</h2>
+            </div>
+            <div class="about-card">
+              <p>
+                KAKUO AIは、カクオ・アーキテクト・オフィスの建築設計知見とAI生成技術を組み合わせ、建築・空間・事業構想の初期提案を高速化するAIデザインスタジオです。
+              </p>
+              <p>
+                単なる画像生成ではなく、設計意図、素材感、導線、体験価値、ブランド性を踏まえたビジュアル提案を行います。
+              </p>
+              <div class="stats">
+                <div class="stat"><strong>24</strong><span>Archive visuals</span></div>
+                <div class="stat"><strong>6</strong><span>Design domains</span></div>
+                <div class="stat"><strong>AI</strong><span>Design intelligence</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="contact-panel">
+            <img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_3fbac021-448d-4277-aadf-59bd185bba15.jpg" alt="Urban Green Plaza" width="1456" height="816" loading="lazy" decoding="async" />
+            <div class="contact-copy">
+              <p class="kicker">Contact</p>
+              <h2>AIで、建築提案の初速を変える。</h2>
+              <p>図面、敷地情報、参考画像、企画書のいずれかがあれば、初期提案の方向性をビジュアルで整理できます。</p>
+              <div class="hero-actions" style="justify-content: center">
+                <a class="button primary" href="#contact-form">相談する</a>
+                <a class="button ghost" href="#service">サービスを見る</a>
+                <a class="button ghost" href="mailto:info@kakuo-ai.com">メールで問い合わせる</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="inline-contact" id="contact-form">
+            <div class="inline-contact-intro">
+              <p class="kicker">Inquiry Form</p>
+              <h3>構想段階の相談を、そのまま送れます。</h3>
+              <p>建築・インテリア・不動産開発・メーカー提案など、まだ資料が揃っていない段階でも問題ありません。入力内容はメール本文として整形されます。</p>
+            </div>
+            <form class="inline-contact-form" data-contact-form>
+              <label>お名前<input type="text" name="お名前" required /></label>
+              <label>会社名<input type="text" name="会社名" /></label>
+              <label>メールアドレス<input type="email" name="メールアドレス" required /></label>
+              <label>電話番号<input type="tel" name="電話番号" /></label>
+              <label>ご相談内容<select name="ご相談内容"><option>AI建築デザイン提案</option><option>AIインテリア提案</option><option>AIランドスケープ提案</option><option>不動産・再開発提案</option><option>建材・プロダクト提案</option><option>AI導入支援</option><option>その他</option></select></label>
+              <label>お問い合わせ内容<textarea name="お問い合わせ内容" required></textarea></label>
+              <p class="form-note">送信ボタンを押すと、入力内容を本文に入れたメール作成画面が開きます。</p>
+              <button class="button primary" type="submit">送信内容を確認する</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>KAKUO AI Design Archive</div>
+        <div>Architecture / Interior / Urban / Product / AI Visual</div>
+      </footer>
+    </div>
+
+    <aside class="case-modal" id="case-living"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_01947fdd-1cfa-4aec-a8d1-b7f132c1b623.jpg" alt="Forest Stone Living" width="1800" height="1008" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Interior / Villa</span><h3>Forest Stone Living</h3><div class="case-list"><p>用途: ヴィラ・宿泊施設のリビング提案</p><p>提案意図: 石、森、火、低い視線を組み合わせ、滞在体験を直感的に共有。</p><p>使用シーン: 企画提案、設計初期検討、営業資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-bedroom"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x313_webp_b45d6969-3153-4636-b70a-c36244590f6a.jpg" alt="Forest View Bedroom" width="1800" height="1008" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Hotel / Villa</span><h3>Forest View Bedroom</h3><div class="case-list"><p>用途: ホテル・ヴィラの客室体験提案</p><p>提案意図: 森を望む開口、木質天井、静かな寝室体験を可視化。</p><p>使用シーン: 宿泊施設企画、投資家向け説明、ブランド検討。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-bathroom"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x315_webp_e866351f-00a5-40a1-9322-a42f32984694.jpg" alt="Wellness Bathroom" width="1672" height="941" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Hotel / Wellness</span><h3>Wellness Bathroom</h3><div class="case-list"><p>用途: 浴室・サウナ・ウェルネス提案</p><p>提案意図: 森の眺望、石材、間接光で上質な滞在価値を表現。</p><p>使用シーン: メーカー提案、宿泊施設企画、空間演出検討。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-urban-mixed"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_f9ab4f8b-026b-4611-84ba-f9ce44bcabb1.jpg" alt="Urban Mixed-use Redevelopment" width="2200" height="1232" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Urban / Real Estate</span><h3>Urban Mixed-use Redevelopment</h3><div class="case-list"><p>用途: 不動産開発・複合施設の初期提案</p><p>提案意図: 広場、低層商業、緑化、都市スケールを一枚で把握可能に。</p><p>使用シーン: 事業構想、行政協議、社内合意形成。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-hospital"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_4ed0445d-cb10-42fe-bce2-7d30659dc340.jpg" alt="Hospital Facade" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Architecture / Healthcare</span><h3>Hospital Facade</h3><div class="case-list"><p>用途: 医療施設のファサード刷新提案</p><p>提案意図: 清潔感、都市性、透明感を持つ外観へ再構成。</p><p>使用シーン: 改修提案、ファサード検討、施主説明。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-sauna"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_fd6f77c0-232f-457a-9518-cdf73b540e19.jpg" alt="Bamboo Sauna Pavilion" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Architecture / Wellness</span><h3>Bamboo Sauna Pavilion</h3><div class="case-list"><p>用途: 小規模サウナ・ウェルネス施設の構想</p><p>提案意図: 竹林の環境と建築の小さなスケールを調和。</p><p>使用シーン: 施設企画、ランドスケープ提案、体験価値の説明。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-bakery"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Bakery Interior" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Retail</span><h3>Bakery Interior</h3><div class="case-list"><p>用途: ベーカリー・売場・什器計画</p><p>提案意図: 商品、什器、素材感、自然光を一体で見せる店舗空間。</p><p>使用シーン: 商業施設提案、テナント提案、売場設計。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-night-urban"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7c37e310-52a1-4474-b2b1-4e96c3963ab3.jpg" alt="Urban Night Development" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Urban / Real Estate</span><h3>Urban Night Development</h3><div class="case-list"><p>用途: 再開発の夜景・商業導線提案</p><p>提案意図: 夜のにぎわい、緑化、低層部の滞在価値を表現。</p><p>使用シーン: デベロッパー提案、プレゼン資料、広報用ビジュアル。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-green-plaza"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_3fbac021-448d-4277-aadf-59bd185bba15.jpg" alt="Urban Green Plaza" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Urban / Landscape</span><h3>Urban Green Plaza</h3><div class="case-list"><p>用途: 駅前広場・公共空間の構想提案</p><p>提案意図: 緑、休憩、カフェ、歩行者体験を都市の中心に組み込む。</p><p>使用シーン: 行政提案、まちづくり資料、景観検討。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-furniture"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture Design" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Product Design</span><h3>Furniture Design</h3><div class="case-list"><p>用途: 家具・建材・メーカー向け提案</p><p>提案意図: プロダクト単体ではなく、空間価値として見せる。</p><p>使用シーン: カタログ、展示会、営業資料、SNS。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-product"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7ee3824b-ecef-4858-94f2-d165b44762ac.jpg" alt="New Product Visual" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Product / Retail</span><h3>New Product Visual</h3><div class="case-list"><p>用途: 新商品・キャンペーンビジュアル</p><p>提案意図: 商品を空間体験として見せ、利用シーンごと魅力化。</p><p>使用シーン: 広報、SNS、店頭提案、ブランド検討。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-green-commercial"><a class="case-close" href="#archive">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x439_v-fs_webp_c3496fbe-ae4a-41ad-a8c0-3bad8cd451c0.jpg" alt="Green Commercial Interior" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Retail / Landscape</span><h3>Green Commercial Interior</h3><div class="case-list"><p>用途: 商業施設・共用部の空間提案</p><p>提案意図: 緑、滞在、動線、売場を一体の体験として可視化。</p><p>使用シーン: 商業施設企画、テナントリーシング、広報資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-aerial"><a class="case-close" href="#works">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-780x436_v-fs_webp_6ca90a62-ef10-4a59-8ef9-21676af94872.jpg" alt="Future City Masterplan" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Urban / Development</span><h3>Future City Masterplan</h3><div class="case-list"><p>用途: まちづくり・広域開発の構想提案</p><p>提案意図: 緑地、建物群、歩行者空間を俯瞰で伝える。</p><p>使用シーン: 初期計画、行政説明、投資家向け資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-bistro"><a class="case-close" href="#works">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_176586f6-7bee-47ed-8491-c59dd25b9c32.jpg" alt="Tokyo Bistro Interior" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Restaurant / Interior</span><h3>Tokyo Bistro Interior</h3><div class="case-list"><p>用途: 飲食店・ホテル内レストランの内装提案</p><p>提案意図: 植栽、素材、席配置、街との関係を一枚で表現。</p><p>使用シーン: 店舗企画、ブランド提案、出店資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-shrine"><a class="case-close" href="#works">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_7682e518-9b75-4c42-8323-f9557bb88ec3.jpg" alt="Urban Shrine Kiosk" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Architecture / Cultural</span><h3>Urban Shrine Kiosk</h3><div class="case-list"><p>用途: 文化施設・小規模建築の提案</p><p>提案意図: 神社の文脈に呼応しながら現代的な小建築を加える。</p><p>使用シーン: 文化施設提案、屋外売店、地域活性化資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-dining"><a class="case-close" href="#works">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-680x381_v-fs_webp_08d6a4c5-f6f0-4281-96cc-e6f8e0ffe1c0.jpg" alt="Forest Dining Kitchen" width="1800" height="1008" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Interior / Villa</span><h3>Forest Dining Kitchen</h3><div class="case-list"><p>用途: ヴィラ・別荘・ホテルのダイニング提案</p><p>提案意図: 森を借景に、石材キッチンと木質天井で滞在価値を高める。</p><p>使用シーン: 住宅提案、宿泊施設企画、素材選定資料。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+    <aside class="case-modal" id="case-side-table"><a class="case-close" href="#works">×</a><div class="case-dialog"><img src="https://storage.googleapis.com/studio-design-asset-files/projects/BVqXj1jPWR/s-560x314_webp_e3dbeb16-976a-4724-8402-6068717df358.jpg" alt="Furniture in Space" width="1456" height="816" loading="lazy" decoding="async" /><div class="case-copy"><span class="kicker">Product / Interior</span><h3>Furniture in Space</h3><div class="case-list"><p>用途: 家具・インテリアメーカー向け利用シーン提案</p><p>提案意図: 家具、光、植栽、質感を組み合わせて購買後の空間を想像させる。</p><p>使用シーン: カタログ、EC、営業資料、展示会。</p></div><a class="button primary" href="#contact-form">Contact CTA</a></div></div></aside>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+      <button class="lightbox-close" type="button" aria-label="閉じる">×</button>
+      <button class="lightbox-prev" type="button" aria-label="前の画像">‹</button>
+      <div class="lightbox-dialog">
+        <div class="lightbox-media"><img id="lightbox-image" alt="" /></div>
+        <div class="lightbox-copy">
+          <p class="kicker" id="lightbox-category"></p>
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-desc"></p>
+          <a class="button primary" id="lightbox-detail" href="https://kakuo-ai.com/" target="_blank" rel="noopener noreferrer">Forest Stone Villaを見る</a>
+        </div>
+      </div>
+      <button class="lightbox-next" type="button" aria-label="次の画像">›</button>
+    </div>
+    <script>
+      (() => {
+        const menu = document.getElementById('menu-toggle');
+        document.querySelectorAll('.nav a').forEach((link) => {
+          link.addEventListener('click', () => {
+            if (menu) menu.checked = false;
+          });
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const image = document.getElementById('lightbox-image');
+        const title = document.getElementById('lightbox-title');
+        const category = document.getElementById('lightbox-category');
+        const desc = document.getElementById('lightbox-desc');
+        const detail = document.getElementById('lightbox-detail');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        const prevButton = lightbox.querySelector('.lightbox-prev');
+        const nextButton = lightbox.querySelector('.lightbox-next');
+        const cards = [...document.querySelectorAll('.hero-card, .archive-card, .work-card')];
+        const items = cards.map((card) => {
+          const img = card.querySelector('img');
+          const target = card.getAttribute('href') || '';
+          const modal = target.startsWith('#case-') ? document.querySelector(target) : null;
+          const modalCopy = modal ? modal.querySelector('.case-copy') : null;
+          const modalList = modalCopy ? [...modalCopy.querySelectorAll('.case-list p')].map((p) => p.textContent.trim()).join('\n') : '';
+          const isForest = /kakuo-ai\.com|Forest Stone/i.test(target + ' ' + card.textContent);
+          return {
+            card,
+            src: img ? img.currentSrc || img.src : '',
+            alt: img ? img.alt : '',
+            title: (modalCopy?.querySelector('h3')?.textContent || card.querySelector('.archive-title')?.textContent || card.querySelector('strong')?.textContent || img?.alt || '').trim(),
+            category: (modalCopy?.querySelector('.kicker')?.textContent || card.querySelector('.card-eyebrow')?.textContent || card.querySelector('small')?.textContent || '').trim(),
+            desc: (modalList || card.querySelector('.archive-desc')?.textContent || card.querySelector('.archive-line')?.textContent || '').trim(),
+            detailHref: isForest ? 'https://kakuo-ai.com/' : ''
+          };
+        }).filter((item) => item.src);
+        let current = 0;
+        let lastFocus = null;
+
+        function setItem(index) {
+          current = (index + items.length) % items.length;
+          const item = items[current];
+          image.src = item.src;
+          image.alt = item.alt || item.title;
+          title.textContent = item.title;
+          category.textContent = item.category;
+          desc.textContent = item.desc || 'KAKUO AIによる建築・空間ビジュアル提案。';
+          detail.hidden = !item.detailHref;
+          if (item.detailHref) detail.href = item.detailHref;
+        }
+
+        function openLightbox(index) {
+          lastFocus = document.activeElement;
+          setItem(index);
+          lightbox.hidden = false;
+          lightbox.classList.add('is-open');
+          document.body.classList.add('lightbox-open');
+          closeButton.focus({ preventScroll: true });
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove('is-open');
+          lightbox.hidden = true;
+          document.body.classList.remove('lightbox-open');
+          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({ preventScroll: true });
+        }
+
+        items.forEach((item, index) => {
+          item.card.addEventListener('click', (event) => {
+            event.preventDefault();
+            openLightbox(index);
+          });
+        });
+
+        closeButton.addEventListener('click', closeLightbox);
+        prevButton.addEventListener('click', () => setItem(current - 1));
+        nextButton.addEventListener('click', () => setItem(current + 1));
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        window.addEventListener('keydown', (event) => {
+          if (!lightbox.classList.contains('is-open')) return;
+          if (event.key === 'Escape') closeLightbox();
+          if (event.key === 'ArrowLeft') setItem(current - 1);
+          if (event.key === 'ArrowRight') setItem(current + 1);
+        });
+
+        document.querySelectorAll('[data-contact-form]').forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const data = new FormData(form);
+            const body = [...data.entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
+            const subject = encodeURIComponent('KAKUO AIへのお問い合わせ');
+            const message = encodeURIComponent(body);
+            window.location.href = `mailto:info@kakuo-ai.com?subject=${subject}&body=${message}`;
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
